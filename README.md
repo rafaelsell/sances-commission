@@ -62,7 +62,7 @@ O desafio propôs originalmente TypeScript + AdonisJS para o backend. Optei por 
 1.  **Clone o repositório**
 
     ```bash
-    git clone <seu-repo-url>
+    git clone `https://github.com/rafaelsell/sances-commission.git`
     cd sances-commission
     ```
 
@@ -75,34 +75,41 @@ O desafio propôs originalmente TypeScript + AdonisJS para o backend. Optei por 
 
 3.  **Configuração do Banco de Dados (Backend)**
 
-    **Opção A: Rodar via Docker (Recomendado)**
-    Dentro de `apps/backend`, execute:
+        **Opção A: Rodar via Docker (Recomendado)**
+        Dentro de `apps/backend`, execute:
 
-    ```bash
-    docker-compose up -d
-    ```
+        ```bash
+        docker-compose up -d
+        ```
 
-    Isso subirá o container do PostgreSQL configurado para o projeto.
+        Isso subirá o container do PostgreSQL configurado para o projeto.
 
-    **Opção B: Manual**
-    Se preferir rodar um Postgres localmente, crie um arquivo `.env` em `apps/backend/` com as credenciais:
+        **Opção B: Manual**
+        Se preferir rodar um Postgres localmente, crie um arquivo `.env` em `apps/backend/` com as credenciais:
 
-    ```env
-    DATABASE_URL="postgresql://user:password@localhost:5432/sances_db"
-    BETTER_AUTH_SECRET="seu_segredo_aqui"
-    BETTER_AUTH_URL="http://localhost:8888"
-    FRONTEND_URL="http://localhost:5173"
-    ```
+        ```env
+
+    PORT=8888
+    NODE_ENV=development
+    POSTGRES_USER=postgres
+    POSTGRES_PASSWORD=postgres
+    POSTGRES_DB=sances_commission
+    POSTGRES_HOST=localhost
+    POSTGRES_PORT=5432
+    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/sances_commission?schema=public"
+    BETTER_AUTH_SECRET=seu_segredo_aqui
+    BETTER_AUTH_URL=http://localhost:8888
+
+````
 
 4.  **Execute as Migrations**
     Dentro de `apps/backend`:
 
-    ```bash
-    bun run db:push
-    ```
+    bun db:generate
+    bun db:migrate
 
-5.  **Rode a aplicação**
-    Na raiz do projeto (roda frontend e backend simultaneamente):
+    Voce pode acessar o Drizzle Studio com bun run db:studio para visualizar o banco de dados.
+
 
     ```bash
     bun run dev
@@ -113,25 +120,28 @@ O desafio propôs originalmente TypeScript + AdonisJS para o backend. Optei por 
 
 ## 📁 Estrutura do Projeto
 
-```
+````
+
 sances-commission/
 ├── apps/
-│   ├── backend/       # API ElysiaJS, Schemas, Banco de Dados, Dockerfile
-│   │   ├── src/
-│   │   │   ├── db/    # Configuração Drizzle
-│   │   │   ├── modules/ # Rotas e Controllers (Sales, Sellers, Auth)
-│   │   └── ...
-│   │
-│   └── frontend/      # Aplicação React
-│       ├── src/
-│       │   ├── components/ # Componentes UI e de Funcionalidades
-│       │   ├── hooks/      # Hooks customizados (API calls)
-│       │   ├── pages/      # Páginas (Dashboard, Reports, Sales)
-│       └── ...
-├── package.json       # Configuração do Workspace
+│ ├── backend/ # API ElysiaJS, Schemas, Banco de Dados, Dockerfile
+│ │ ├── src/
+│ │ │ ├── db/ # Configuração Drizzle
+│ │ │ ├── modules/ # Rotas e Controllers (Sales, Sellers, Auth)
+│ │ └── ...
+│ │
+│ └── frontend/ # Aplicação React
+│ ├── src/
+│ │ ├── components/ # Componentes UI e de Funcionalidades
+│ │ ├── hooks/ # Hooks customizados (API calls)
+│ │ ├── pages/ # Páginas (Dashboard, Reports, Sales)
+│ └── ...
+├── package.json # Configuração do Workspace
 └── README.md
+
 ```
 
 ## 🎥 Demonstração
 
 [Link para o vídeo demonstrativo] (A ser adicionado)
+```
