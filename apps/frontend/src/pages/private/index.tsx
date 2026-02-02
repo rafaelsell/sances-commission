@@ -17,7 +17,7 @@ export const DashboardPage = () => {
         bgColor={"white"}
         p={8}
         rounded={"lg"}
-        boxShadow={"md"}
+        boxShadow={"sm"}
         w={"full"}
         justifyContent={"space-between"}
       >

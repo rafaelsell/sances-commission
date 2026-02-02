@@ -24,7 +24,7 @@ export const DashboardStats = ({ sales }: DashboardStatsProps) => {
 
   return (
     <SimpleGrid columns={{ base: 1, md: 3 }} gap={4}>
-      <Card.Root boxShadow={"md"}>
+      <Card.Root>
         <Card.Body p={6}>
           <StatRoot>
             <StatLabel>Vendas Totais</StatLabel>
@@ -38,7 +38,7 @@ export const DashboardStats = ({ sales }: DashboardStatsProps) => {
         </Card.Body>
       </Card.Root>
 
-      <Card.Root boxShadow={"md"}>
+      <Card.Root>
         <Card.Body p={6}>
           <StatRoot>
             <StatLabel>Minhas Comissões</StatLabel>
@@ -52,7 +52,7 @@ export const DashboardStats = ({ sales }: DashboardStatsProps) => {
         </Card.Body>
       </Card.Root>
 
-      <Card.Root boxShadow={"md"}>
+      <Card.Root>
         <Card.Body p={6}>
           <StatRoot>
             <StatLabel>Quantidade de Vendas</StatLabel>
