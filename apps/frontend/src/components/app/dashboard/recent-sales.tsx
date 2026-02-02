@@ -10,7 +10,7 @@ interface RecentSalesProps {
 }
 
 export const RecentSales = ({ sales }: RecentSalesProps) => {
-  const recentSales = sales.slice(0, 5); // Show only top 5
+  const recentSales = sales.slice(0, 5);
 
   return (
     <Card.Root w="full">

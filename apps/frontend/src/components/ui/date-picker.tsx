@@ -3,10 +3,9 @@ import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { DayPicker } from "react-day-picker";
 import { LuCalendar } from "react-icons/lu";
-import "react-day-picker/dist/style.css"; // We might need to override styles or use a custom CSS module if Chakra styles don't bleed well, but let's start with default and wrapper.
+import "react-day-picker/dist/style.css";
 import { useState } from "react";
 
-// Custom styles to make DayPicker look better with Chakra
 const css = `
   .rdp {
     --rdp-cell-size: 40px;
