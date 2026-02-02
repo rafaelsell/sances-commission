@@ -143,4 +143,4 @@ sances-commission/
 
 ## 🎥 Demonstração
 
-[Link para o vídeo demonstrativo] (A ser adicionado)
+[Video de demo](https://youtu.be/qA8-XDQalYA)
