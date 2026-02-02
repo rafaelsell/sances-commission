@@ -1,7 +1,9 @@
 import cors from "@elysiajs/cors";
 
+import { env } from "./env";
+
 export const corsPlugin = cors({
-  origin: ["http://localhost:5173", "http://localhost:8888"],
+  origin: env.CORS_ORIGIN.split(",").map((origin) => origin.trim()),
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"],

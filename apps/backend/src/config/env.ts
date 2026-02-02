@@ -15,6 +15,9 @@ const envSchema = z.object({
     ),
   BETTER_AUTH_SECRET: z.string(),
   BETTER_AUTH_URL: z.url(),
+  CORS_ORIGIN: z
+    .string()
+    .default("http://localhost:5173,http://localhost:8888"),
 });
 
 export const env = envSchema.parse(process.env);
