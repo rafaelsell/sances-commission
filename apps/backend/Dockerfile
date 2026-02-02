@@ -16,7 +16,7 @@ RUN bun install
 COPY . .
 
 # Set working directory to backend
-WORKDIR /app/apps/backend
+WORKDIR /apps/backend
 
 # Expose port
 EXPOSE 8888
