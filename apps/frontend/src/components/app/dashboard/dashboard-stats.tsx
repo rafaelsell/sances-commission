@@ -18,7 +18,7 @@ export const DashboardStats = ({ sales }: DashboardStatsProps) => {
   const totalSales = sales.length;
   const totalAmount = sales.reduce((acc, sale) => acc + Number(sale.amount), 0);
   const totalCommission = sales.reduce(
-    (acc, sale) => acc + Number(sale.sellerComm),
+    (acc, sale) => acc + Number(sale.managerComm),
     0,
   );
 

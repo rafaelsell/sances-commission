@@ -26,7 +26,12 @@ export const RecentSales = ({ sales }: RecentSalesProps) => {
               <Table.ColumnHeader>Data</Table.ColumnHeader>
               <Table.ColumnHeader>Vendedor</Table.ColumnHeader>
               <Table.ColumnHeader textAlign="end">Valor</Table.ColumnHeader>
-              <Table.ColumnHeader textAlign="end">Comissão</Table.ColumnHeader>
+              <Table.ColumnHeader textAlign="end">
+                Comissão Vendedor
+              </Table.ColumnHeader>
+              <Table.ColumnHeader textAlign="end">
+                Minha Comissão
+              </Table.ColumnHeader>
             </Table.Row>
           </Table.Header>
           <Table.Body>
@@ -55,11 +60,19 @@ export const RecentSales = ({ sales }: RecentSalesProps) => {
                     }).format(Number(sale.sellerComm))}
                   </Badge>
                 </Table.Cell>
+                <Table.Cell textAlign="end">
+                  <Badge colorPalette="blue" variant="subtle">
+                    {new Intl.NumberFormat("pt-BR", {
+                      style: "currency",
+                      currency: "BRL",
+                    }).format(Number(sale.managerComm))}
+                  </Badge>
+                </Table.Cell>
               </Table.Row>
             ))}
             {recentSales.length === 0 && (
               <Table.Row>
-                <Table.Cell colSpan={4} textAlign="center">
+                <Table.Cell colSpan={5} textAlign="center">
                   <Stack align="center" py={8} color="gray.500">
                     <Icon as={LuDollarSign} boxSize={8} />
                     <Text>Nenhuma venda recente</Text>
