@@ -1,0 +1,10 @@
+{
+  "name": "sances-commission",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "bun --filter '*' dev"
+  }
+}
