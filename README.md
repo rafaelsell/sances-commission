@@ -88,19 +88,17 @@ O desafio propôs originalmente TypeScript + AdonisJS para o backend. Optei por 
         Se preferir rodar um Postgres localmente, crie um arquivo `.env` em `apps/backend/` com as credenciais:
 
         ```env
-
-    PORT=8888
-    NODE_ENV=development
-    POSTGRES_USER=postgres
-    POSTGRES_PASSWORD=postgres
-    POSTGRES_DB=sances_commission
-    POSTGRES_HOST=localhost
-    POSTGRES_PORT=5432
-    DATABASE_URL="postgresql://postgres:postgres@localhost:5432/sances_commission?schema=public"
-    BETTER_AUTH_SECRET=seu_segredo_aqui
-    BETTER_AUTH_URL=http://localhost:8888
-
-````
+        PORT=8888
+        NODE_ENV=development
+        POSTGRES_USER=postgres
+        POSTGRES_PASSWORD=postgres
+        POSTGRES_DB=sances_commission
+        POSTGRES_HOST=localhost
+        POSTGRES_PORT=5432
+        DATABASE_URL="postgresql://postgres:postgres@localhost:5432/sances_commission?schema=public"
+        BETTER_AUTH_SECRET=seu_segredo_aqui
+        BETTER_AUTH_URL=http://localhost:8888
+        ```
 
 4.  **Execute as Migrations**
     Dentro de `apps/backend`:
@@ -109,7 +107,6 @@ O desafio propôs originalmente TypeScript + AdonisJS para o backend. Optei por 
     bun db:migrate
 
     Voce pode acessar o Drizzle Studio com bun run db:studio para visualizar o banco de dados.
-
 
     ```bash
     bun run dev
@@ -120,28 +117,30 @@ O desafio propôs originalmente TypeScript + AdonisJS para o backend. Optei por 
 
 ## 📁 Estrutura do Projeto
 
-````
-
+```
 sances-commission/
 ├── apps/
-│ ├── backend/ # API ElysiaJS, Schemas, Banco de Dados, Dockerfile
-│ │ ├── src/
-│ │ │ ├── db/ # Configuração Drizzle
-│ │ │ ├── modules/ # Rotas e Controllers (Sales, Sellers, Auth)
-│ │ └── ...
-│ │
-│ └── frontend/ # Aplicação React
-│ ├── src/
-│ │ ├── components/ # Componentes UI e de Funcionalidades
-│ │ ├── hooks/ # Hooks customizados (API calls)
-│ │ ├── pages/ # Páginas (Dashboard, Reports, Sales)
-│ └── ...
-├── package.json # Configuração do Workspace
+│   ├── backend/                # API ElysiaJS
+│   │   ├── src/
+│   │   │   ├── config/         # Configurações do ambiente
+│   │   │   ├── db/             # Configuração do Drizzle ORM
+│   │   │   ├── modules/        # Rotas e Controllers (Sales, Sellers, Auth)
+│   │   │   ├── lib/            # Utilitários
+│   │   │   └── index.ts        # Entry point
+│   │   └── ...
+│   └── frontend/               # Aplicação React
+│       ├── src/
+│       │   ├── components/     # Componentes UI
+│       │   ├── hooks/          # Custom Hooks (API integration)
+│       │   ├── pages/          # Páginas da aplicação
+│       │   ├── stores/         # Gerenciamento de estado (Zustand)
+│       │   ├── router.tsx      # Configuração de rotas
+│       │   └── main.tsx        # Entry point
+│       └── ...
+├── package.json                # Configuração do Workspace
 └── README.md
-
 ```
 
 ## 🎥 Demonstração
 
 [Link para o vídeo demonstrativo] (A ser adicionado)
-```
